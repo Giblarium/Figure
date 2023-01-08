@@ -1,6 +1,6 @@
 ﻿using System.Runtime.Serialization;
 
-namespace Figure
+namespace Figures
 {
     [Serializable]
     internal class TriangleDoesNotExistException : Exception

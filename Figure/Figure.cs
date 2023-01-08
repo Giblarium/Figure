@@ -1,7 +1,7 @@
-﻿namespace Figure
+﻿namespace Figures
 {
     public class Figure
     {
-        public double Area;
+        public  double Area { get; set; }
     }
 }

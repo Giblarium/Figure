@@ -1,8 +1,7 @@
-﻿using System.Runtime.ExceptionServices;
-
-namespace Figure
+﻿
+namespace Figures
 {
-    internal class Triangle : Figure
+    public class Triangle : Figure
     {
         public double A { get; set; }
         public double B { get; set; }
@@ -28,7 +27,27 @@ namespace Figure
         }
         public override string ToString()
         {
-            return $"Стороны трегугольника ABC: {A}, {B}, {C}/nПлощадь треугольника: {Area}";
+            return $"Стороны трегугольника ABC: {A}, {B}, {C}\nПлощадь треугольника: {Area}";
+        }
+
+        public static Figure InputFigure()
+        {
+            Console.WriteLine("Введите сторону A:");
+            if (!Double.TryParse(Console.ReadLine(), out double _a) || _a < 0)
+            {
+                _a = 0;
+            }
+            Console.WriteLine("Введите сторону B:");
+            if (!Double.TryParse(Console.ReadLine(), out double _b) || _b < 0)
+            {
+                _b = 0;
+            }
+            Console.WriteLine("Введите сторону B:");
+            if (!Double.TryParse(Console.ReadLine(), out double _c) || _c < 0)
+            {
+                _c = 0;
+            }
+            return new Triangle(_a, _b, _c);
         }
     }
 }

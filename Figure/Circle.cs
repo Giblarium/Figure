@@ -1,8 +1,9 @@
-﻿namespace Figure
+﻿namespace Figures
 {
-    internal class Circle : Figure
+    public class Circle : Figure
     {
         public double Radius { get; set; }
+
         public Circle(double radius) 
         {
             Radius = radius;
@@ -10,7 +11,16 @@
         }
         public override string ToString()
         {
-            return $"Площадь круга: {Area}/nРадиус круга: {Radius}";
+            return $"Радиус круга: {Radius}\nПлощадь круга: {Area}";
+        }
+        public static Circle InputFigure()
+        {
+            Console.WriteLine("Введите радиус:");
+            if (!Double.TryParse(Console.ReadLine(), out double _radius) || _radius < 0)
+            {
+                _radius = 0;
+            }
+            return new Circle(_radius);
         }
     }
 }
